@@ -39,5 +39,21 @@ namespace BalancedBracketsNS
             }
             return brackets == 0;
         }
+        public static bool HasUnBalancedBrackets(String str)
+        {
+            int brackets = 0;
+            foreach (char ch in str.ToCharArray())
+            {
+                if (ch == '[')
+                {
+                    brackets++;
+                }
+                else if (ch == ' ')
+                {
+                    brackets--;
+                }
+            }
+            return brackets == 0;
+        }
     }
 }

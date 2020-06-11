@@ -6,7 +6,54 @@ namespace BalancedBracketsTests
     [TestClass]
     public class BalancedBracketsTests
     {
-        // TODO: Add tests to this file.
+        [TestMethod]
+        public void OnlyBracketsReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[]"));
+        }
+
+        [TestMethod]
+        public void TestEmptyStringReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets(""));
+        }
+
+        [TestMethod]
+        public void TestStringinBracketsReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[Launchcode]"));
+        }
+
+        [TestMethod]
+        public void TestStringinsideBracketsReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("launch[code]"));
+        }
+
+        [TestMethod]
+        public void TestStringAndBracketsReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[]Launchcode"));
+        }
+
+        [TestMethod]
+        public void TestTwoSetOfBracketsReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[]Launchcode[]"));
+        }
+
+        [TestMethod]
+        public void TestnestedBracketsReturnsFalse()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[Launchcode"));
+        }
+
+        [TestMethod]
+        public void TestOnlyRightBracketReturnsFalse()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[Launchcode"));
+        }        
+
 
         [TestMethod]
         public void EmptyTest()
